@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Text Adventure Game</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #1a1a1a;
+            color: #00ff00; /* Green text, classic Zork feel */
+            margin: 20px;
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack elements vertically */
+            height: calc(100vh - 40px); /* Full viewport height minus margin */
+            overflow: hidden; /* Prevent body scroll */
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        #game-container {
+            display: flex; /* Flex container for game output and command list */
+            flex-grow: 1; /* Allows it to take available space */
+            margin-bottom: 10px;
+            overflow: hidden; /* Prevent internal scrolling issues */
+        }
+        #game-output {
+            border: 1px solid #00ff00;
+            padding: 10px;
+            flex-grow: 1; /* Takes up most of the space */
+            overflow-y: auto; /* Scroll for game output */
+            margin-right: 10px; /* Space between output and command list */
+            white-space: pre-wrap; /* Preserve formatting for descriptions */
+        }
+        #command-list {
+            border: 1px solid #00ff00;
+            padding: 10px;
+            width: 200px; /* Fixed width for command list */
+            overflow-y: auto; /* Scroll for command list if too many */
+            flex-shrink: 0; /* Don't shrink */
+        }
+        #command-list h3 {
+            margin-top: 0;
+            color: #00ffff; /* Cyan for heading */
+        }
+        #command-list ul {
+            list-style-type: none; /* No bullets */
+            padding: 0;
+        }
+        #command-list li {
+            margin-bottom: 5px;
+        }
+        #player-input {
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            padding: 10px;
+            background-color: #000;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            flex-shrink: 0; /* Don't shrink */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Whiterun!</h1>
+    <div id="game-container">
+        <div id="game-output">
+            <!-- Game text will appear here -->
+            You awaken in a strange place...
+        </div>
+        <div id="command-list">
+            <h3>Commands</h3>
+            <ul id="commands-ul">
+                <!-- Commands will be listed here by JavaScript -->
+            </ul>
+        </div>
+    </div>
+    <input type="text" id="player-input" autofocus placeholder="Type your command here...">
+
+    <!-- Link your JavaScript file here -->
+    <script src="script.js"></script>
+</body>
+</html>
